@@ -28,7 +28,7 @@ jobs:
       - name: Generate EPG
         run: |
           cd epg
-          npm run grab --- --channels=custom.channels.xml
+          npm run grab --- --channels=channels.xml
 
       - name: Copy guide.xml to GitHub.io repo
         run: |
