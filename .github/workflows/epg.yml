@@ -9,11 +9,8 @@ jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout EPG repo
+      - name: Checkout repo
         uses: actions/checkout@v3
-        with:
-          repository: iptv-org/epg
-          path: epg
 
       - name: Setup Node
         uses: actions/setup-node@v3
@@ -30,7 +27,7 @@ jobs:
           cd epg
           npm run grab --- --channels=channels.xml
 
-      - name: Copy guide.xml to GitHub.io repo
+      - name: Copy guide.xml to GitHub Pages root
         run: |
           cp epg/guide.xml ./guide.xml
 
